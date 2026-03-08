@@ -1,0 +1,4 @@
+Model,Estimate,Std. Error,t value,Pr(>|t|),r.squared,adj.r.squared,f.statistic
+Linear,-0.0511,0.0265,-1.9309,0.0542,0.0096,0.0071,3.7283
+Logarithmic,-65.3207,23.8257,-2.7416,0.0064,0.0192,0.0167,7.5164
+Quadratic,-0.1488,0.0664,-2.2417,0.0256,0.0163,0.0111,3.1593

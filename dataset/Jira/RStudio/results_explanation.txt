@@ -1,0 +1,74 @@
+1. Regression models: describes the relationship between one or more independent variables and a response, dependent, or target variable.
+Intercept: predicted resolution time when comment length is 0
+Slope: for every 1-character increase in comment length, resolution time decreases by 0.051 days
+at 95% confidence interval, p-value must be <= 0.05 to be significant
+R^2: measure that provides information about the goodness of fit of a model
+
+SO:
+Linear model: not significant, 
+p-value: 0.0542 -> not statistically significant at 95% confidence (since > 0.05).
+R^2: 0.0096 -> very little of the variation in resolution time is explained by comment length. 
+
+Overall: Weak linear relationship. Borderline significance.
+
+
+Logarithmic model: 
+Slope (log): As the log of comment length increases, resolution time drops sharply.
+p-value: 0.0064 -> statistically significant.
+R^2: 0.0193 → still weak fit, but explains twice as much variance as the linear model.
+
+Overall: The logarithmic model fits better and shows a statistically significant negative relationship. As comment length increases (log-scale), resolution time tends to drop.
+
+
+Quadratic model:
+p-value: 0.0436
+R^2: 0.0163 -> slightly better than linear, worse than log.
+
+Overall: Suggests a slight curve in the relationship, but the curvature is not statistically strong. The linear and quadratic parts both point to a weak downward trend overall.
+
+
+Conclusion:
+The logarithmic model gives the best fit and is statistically significant.
+Comment length is weakly predictive of faster resolution, but not strongly enough to build a highly accurate model.
+Other variables that will be analyzed (e.g., tone, relevance, descriptive quality) may be more predictive
+
+
+
+
+2. Odds Ratio: the probability that an issue is resolved as a function of commentlength
+(Intercept): Baseline log-odds of resolution when commentlength = 0
+commentlength: For each character increase in comment length, the log-odds of an issue being resolved increases by 0.00135 for every 1-character increase in comment length.
+Comment length is a significant predictor of resolution status.
+
+OR lower = lower bound of the confidence interval
+OR upper = upper bound of the confidence interval
+range of values the true odds ratio is likely to fall within, with 95% confidence
+in essence, we can be 95% confident that for every 1-character increase in commentlength, the odds of issue resolution increase by between ~0.1016% and 0.1717%.
+
+Conclusion:
+Longer comments are positively associated with an issue being resolved. This could reflect that a more detailed initial issue comment is more likely to lead to a resolution.
+Still, the effect size is modest, so comment length alone doesn’t determine resolution, but it helps.
+
+
+
+
+3. Regression: boxplot for tone
+Df, Degrees of freedom: "tone" has 4 categories → 3 df; n-1
+Sum Sq, Sum of squares: total variability explained by each term
+Mean Sq, Mean sum of squares = Sum Sq / Df
+
+F value: Ratio of variability explained by the model vs unexplained variability (Mean Sq_tone / Mean Sq_residuals). The amount of variation in resolutiontime explained by tone is small compared to the residual variation.
+
+p-value: probability that the variation due to "tone" is just due to chance. = 0.301: Greater than 0.05, so we fail to reject the null hypothesis.
+
+Conclusion: 
+There is no statistically significant difference in resolution time between the different tones of the initial issue comment.
+
+
+
+
+
+4. Odds Ratio for angry or non-positive + non-neutral issue initial comments
+
+Negative estimate means that issues with angry/frustrated comments are less likely to be resolved.
+The p-value < 0.05 means this result is statistically significant. !!
