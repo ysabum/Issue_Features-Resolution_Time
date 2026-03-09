@@ -10,55 +10,55 @@ from datetime import datetime
 
 csv.field_size_limit(sys.maxsize)
 
-# # Clean up the sample dataset
-# input_file = 'csv_files/3-issues_recent.csv'
-# output_file = 'csv_files/4-issues_recent_cleaned.csv'
+# Clean up the sample dataset
+input_file = 'csv_files/3-issues_recent.csv'
+output_file = 'csv_files/4-issues_recent_cleaned.csv'
 
-# with open(input_file, mode='r', encoding='utf-8', newline='') as infile, \
-#      open(output_file, mode='w', encoding='utf-8', newline='') as outfile:
+with open(input_file, mode='r', encoding='utf-8', newline='') as infile, \
+     open(output_file, mode='w', encoding='utf-8', newline='') as outfile:
 
-#     reader = csv.reader((line.replace('\x00', '') for line in infile))
-#     writer = csv.writer(outfile)
+    reader = csv.reader((line.replace('\x00', '') for line in infile))
+    writer = csv.writer(outfile)
 
-#     header = next(reader)
-#     writer.writerow(header)
+    header = next(reader)
+    writer.writerow(header)
 
-#     for row in reader:
-#         if len(row) <= 12:
-#             writer.writerow(row)  # row is likely fine
-#             continue
+    for row in reader:
+        if len(row) <= 12:
+            writer.writerow(row)  # row is likely fine
+            continue
 
-#         fixed_row = row[:9]  # everything up to description
-#         i = 9
+        fixed_row = row[:9]  # everything up to description
+        i = 9
 
-#         reconstructed_description = row[i]
-#         while True:
-#             if i + 3 < len(row) and row[i + 1].strip() == 'NULL' and row[i + 2].strip() == 'NULL' and row[i + 3].strip() != 'NULL':
-#                 # End of broken description
-#                 break
-#             if i + 1 >= len(row):
-#                 break
-#             reconstructed_description += ',' + row[i + 1]
-#             i += 1
+        reconstructed_description = row[i]
+        while True:
+            if i + 3 < len(row) and row[i + 1].strip() == 'NULL' and row[i + 2].strip() == 'NULL' and row[i + 3].strip() != 'NULL':
+                # End of broken description
+                break
+            if i + 1 >= len(row):
+                break
+            reconstructed_description += ',' + row[i + 1]
+            i += 1
 
-#         # Append cleaned description
-#         fixed_row.append(reconstructed_description)
+        # Append cleaned description
+        fixed_row.append(reconstructed_description)
 
-#         # Now append environment and duedate
-#         if i + 1 < len(row):
-#             fixed_row.append(row[i + 1])  # environment
-#         else:
-#             fixed_row.append('')  # fill if missing
+        # Now append environment and duedate
+        if i + 1 < len(row):
+            fixed_row.append(row[i + 1])  # environment
+        else:
+            fixed_row.append('')  # fill if missing
 
-#         if i + 2 < len(row):
-#             fixed_row.append(row[i + 2])  # duedate
-#         else:
-#             fixed_row.append('')  # fill if missing
+        if i + 2 < len(row):
+            fixed_row.append(row[i + 2])  # duedate
+        else:
+            fixed_row.append('')  # fill if missing
 
-#         # Then the rest of the row starting from i + 3
-#         fixed_row.extend(row[i + 3:])
+        # Then the rest of the row starting from i + 3
+        fixed_row.extend(row[i + 3:])
 
-#         writer.writerow(fixed_row)
+        writer.writerow(fixed_row)
 
 
 # Filter out resolved issues that were not actually resolved
