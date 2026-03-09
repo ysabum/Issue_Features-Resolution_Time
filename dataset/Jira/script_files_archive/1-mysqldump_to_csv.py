@@ -109,7 +109,7 @@ def main():
             for line in fileinput.input():
                 # Look for an INSERT statement and parse it.
                 if not is_insert(line):
-                    raise Exception("SQL INSERT statement could not be found!")
+                    continue
                 values = get_values(line)
                 if not values_sanity_check(values):
                     raise Exception("Getting substring of SQL INSERT statement after ' VALUES ' failed!")

@@ -2,7 +2,7 @@
 library(ggplot2)
 
 # Read in data
-resolved <- read.csv("csv_final/6-issues_analyzed.csv")
+resolved <- read.csv("issues_analyzed.csv")
 
 # Convert resolutiontime and timespent to numeric (if not already)
 resolved$resolutiontime <- as.numeric(resolved$resolutiontime)
@@ -37,7 +37,7 @@ poly_summary$model <- "Quadratic"
 all_models <- rbind(linear_summary, log_summary, poly_summary)
 
 # Export to CSV
-write.csv(all_models, "RStudio/exports/regression_model_summaries.csv", row.names = TRUE)
+write.csv(all_models, "regression_model_summaries.csv", row.names = TRUE)
 
 
 
@@ -66,5 +66,5 @@ ggplot(resolved, aes(x = commentlength, y = resolutiontime)) +
 
 
 # Save the last plot as PNG
-ggsave("RStudio/exports/resolutiontime_vs_commentlength.png", width = 8, height = 6, dpi = 300)
+ggsave("resolutiontime_vs_commentlength.png", width = 8, height = 6, dpi = 300)
 

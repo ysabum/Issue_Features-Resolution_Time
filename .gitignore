@@ -1,2 +1,4 @@
 dataset/Jira/csv_files
 dataset/Jira/api_key
+dataset/Jira/.venv
+dataset/Jira/programming_task_example
