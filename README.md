@@ -1,6 +1,6 @@
 # Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis
 
-The replication package for the project paper *"Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis"*. 
+The replication package for the project paper *Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis*. 
   
 Dataset Sources and References:
 1. [JIRAIssue](https://zenodo.org/records/8237408)
