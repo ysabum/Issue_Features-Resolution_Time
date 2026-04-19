@@ -1,5 +1,6 @@
 '''
-Script to fix broken description delimiter in sample dataset.
+Script to fix broken description delimiter in
+and generally clean sample dataset.
 '''
 
 import csv
@@ -7,12 +8,15 @@ import sys
 import random
 from collections import defaultdict
 from datetime import datetime
+from pathlib import Path
 
 csv.field_size_limit(sys.maxsize)
 
+BASE_DIR = Path(__file__).resolve().parent
+
 # Clean up the sample dataset
-input_file = 'csv_files/3-issues_recent.csv'
-output_file = 'csv_files/4-issues_recent_cleaned.csv'
+input_file = BASE_DIR / 'csvIntermediate' / '3-issues_recent.csv'
+output_file = BASE_DIR / 'csvIntermediate' / '4-issues_recent_cleaned.csv'
 
 with open(input_file, mode='r', encoding='utf-8', newline='') as infile, \
      open(output_file, mode='w', encoding='utf-8', newline='') as outfile:
@@ -62,8 +66,8 @@ with open(input_file, mode='r', encoding='utf-8', newline='') as infile, \
 
 
 # Filter out resolved issues that were not actually resolved
-with open('csv_files/4-issues_recent_cleaned.csv', mode='r', encoding='utf-8', newline='') as infile, \
-     open('csv_files/4.1-issues_recent_resolved.csv', mode='w', encoding='utf-8', newline='') as outfile:
+with open(BASE_DIR / 'csvIntermediate' / '4-issues_recent_cleaned.csv', mode='r', encoding='utf-8', newline='') as infile, \
+     open(BASE_DIR / 'csvIntermediate' / '4.1-issues_recent_resolved.csv', mode='w', encoding='utf-8', newline='') as outfile:
     
     reader = csv.reader((line.replace('\x00', '') for line in infile))
     writer = csv.writer(outfile)
@@ -87,7 +91,7 @@ with open('csv_files/4-issues_recent_cleaned.csv', mode='r', encoding='utf-8', n
 # Dictionary to group rows by NAME (e.g., AAR, ACCUMULO)
 groups = defaultdict(list)
 
-with open('csv_files/4.1-issues_recent_resolved.csv', mode='r', encoding='utf-8', newline='') as infile:
+with open(BASE_DIR / 'csvIntermediate' / '4.1-issues_recent_resolved.csv', mode='r', encoding='utf-8', newline='') as infile:
     reader = csv.reader((line.replace('\x00', '') for line in infile))
     header = next(reader)
 
@@ -108,7 +112,7 @@ for group_rows in groups.values():
 
 
 # Write intermediate sample to a temp file
-intermediate_file = 'csv_files/4.2-issues_sample_wip.csv'
+intermediate_file = BASE_DIR / 'csvIntermediate' / '4.2-issues_sample_wip.csv'
 with open(intermediate_file, mode='w', encoding='utf-8', newline='') as outfile:
     writer = csv.writer(outfile)
     writer.writerow(header)
@@ -116,7 +120,7 @@ with open(intermediate_file, mode='w', encoding='utf-8', newline='') as outfile:
 
 
 # Reopen and sample exactly 385 rows
-final_sample_file = 'csv_files/5-issues_sample.csv'
+final_sample_file = BASE_DIR / 'csvIntermediate' / '5-issues_sample.csv'
 with open(intermediate_file, mode='r', encoding='utf-8', newline='') as infile:
     reader = list(csv.reader(infile))
     header = reader[0]

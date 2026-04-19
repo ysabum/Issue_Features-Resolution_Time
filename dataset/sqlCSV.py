@@ -7,6 +7,7 @@ import fileinput
 import csv
 import sys
 import os
+from pathlib import Path
 
 # This prevents prematurely closed pipes from raising
 # an exception in Python
@@ -15,6 +16,8 @@ signal(SIGPIPE, SIG_DFL)
 
 # allow large content in the dump
 csv.field_size_limit(sys.maxsize)
+
+BASE_DIR = Path(__file__).resolve().parent
 
 def is_insert(line):
     """
@@ -63,10 +66,13 @@ def parse_values(values, outfile):
             if len(column) == 0 or column == 'NULL':
                 latest_row.append(chr(0))
                 continue
+            
             # If our string starts with an open paren
             if column[0] == "(":
+                
                 # If we've been filling out a row
                 if len(latest_row) > 0:
+                    
                     # Check if the previous entry ended in
                     # a close paren. If so, the row we've
                     # been filling out has been COMPLETED
@@ -74,16 +80,20 @@ def parse_values(values, outfile):
                     #    1) the previous entry ended in a )
                     #    2) the current entry starts with a (
                     if latest_row[-1][-1] == ")":
+                        
                         # Remove the close paren.
                         latest_row[-1] = latest_row[-1][:-1]
                         writer.writerow(latest_row)
                         latest_row = []
+                        
                 # If we're beginning a new row, eliminate the
                 # opening parentheses.
                 if len(latest_row) == 0:
                     column = column[1:]
+                    
             # Add our column to the row we're working on.
             latest_row.append(column)
+            
         # At the end of an INSERT statement, we'll
         # have the semicolon.
         # Make sure to remove the semicolon and
@@ -97,16 +107,19 @@ def main():
     """
     Parse arguments and start the program
     """
+    
     # Define the output CSV file path
-    output_file = 'csv_files/issues.csv'
+    output_file = BASE_DIR / 'csvIntermediate' / 'issues.csv'
 
     try:
         # Open the CSV file for writing
         with open(output_file, mode='w', newline='', encoding='utf-8') as outfile:
+            
             # Iterate over all lines in all files
             # listed in sys.argv[1:]
             # or stdin if no args given.
             for line in fileinput.input():
+                
                 # Look for an INSERT statement and parse it.
                 if not is_insert(line):
                     continue

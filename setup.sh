@@ -30,10 +30,16 @@ sudo apt install -y python3 python3-pip python3-venv
 USER_NAME="$(whoami)"
 
 # Directory to store your virtual environment, change this as needed!
-DIR_WORKSPACE="/home/${USER_NAME}/.GitHub/CSCI 8920/Project Datasets/jira_issue"
+DIR_WORKSPACE="/home/${USER_NAME}/Issue_Features-Resolution_Time"
+DJ_PRJ="${DIR_WORKSPACE}/webworkspace/djangoproject"
 
 # Name of the virtual environment folder
-VENV_NAME=".env"
+VENV_NAME=".venv"
+
+# Superuser credentials (for demonstration only; use stronger creds in production!)
+DJANGO_SUPERUSER_USERNAME="admin"
+DJANGO_SUPERUSER_EMAIL="admin@example.com"
+DJANGO_SUPERUSER_PASSWORD="!password"
 
 echo "==> Configuring environment variables..."
 # You can optionally append these to ~/.bashrc so they're available in future shells:
@@ -51,6 +57,7 @@ echo "==> Creating workspace directory at $DIR_WORKSPACE..."
 mkdir -p "$DIR_WORKSPACE"
 cd "$DIR_WORKSPACE"
 
+
 echo "==> Creating virtual environment ($VENV_NAME)..."
 python3 -m venv "$VENV_NAME"
 
@@ -59,18 +66,34 @@ echo "==> Activating virtual environment..."
 source "$DIR_WORKSPACE/$VENV_NAME/bin/activate"
 
 
+
 ######################################
 # 4) Install Modules
 ######################################
 echo "==> Upgrading pip and installing modules ..."
 python -m pip install --upgrade pip
+sudo apt install nginx
 pip install langdetect
 pip install pandas
 pip install openai
 pip install load_dotenv
+pip install django gunicorn
+pip install django-widget-tweaks
+pip install django-mathfilters
+pip install django-jazzmin
+pip install requests
+pip install Pillow
+
+####################################
+# 5) Configure Django App  #
+####################################
+echo "==> Making migrations and collecting static..."
+python manage.py migrate
+python manage.py collectstatic --noinput
+
 
 #####################
-# 5) All Done!
+# 56) All Done!
 #####################
 echo ""
 echo "==========================================================="

@@ -1,8 +1,8 @@
 # Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis
 
-The replacation package for the project paper _"Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis"_.  
+The replacation package for the project paper *"Measuring Resolution Time in Issue Tracking Systems Using Communication Tone and Content Analysis"*. 
   
-Dataset(s) Sources:
+Dataset Sources and References:
 1. [JIRAIssue](https://zenodo.org/records/8237408)
 2. [The Good First Issue Recommendation](https://zenodo.org/records/6837711)
-3. [Toxicity](https://github.com/WSU-SEAL/ToxiCR/blob/master/models/code-review-dataset-full.xlsx)
+3. [Toxicity](https://arxiv.org/html/2502.08238v1)

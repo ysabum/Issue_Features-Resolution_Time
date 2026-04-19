@@ -1,0 +1,1 @@
+ResolutionTime = 126.12 + 30.66 * log (percent_toxicity)

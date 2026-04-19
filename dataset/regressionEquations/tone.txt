@@ -1,0 +1,1 @@
+ResolutionTime = 109.47 + 18.29 * log(percent_tone)

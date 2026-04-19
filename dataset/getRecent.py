@@ -1,17 +1,21 @@
 '''
-Script to narrow down issues to those that have been resolved in the recent past and have English language summary.
+Script to narrow down issues to those that have been resolved 
+in the recent past and have English language summary.
 '''
 
 import csv
 import sys
 from langdetect import detect, LangDetectException
 import re
+from pathlib import Path
 
 csv.field_size_limit(sys.maxsize)
 
+BASE_DIR = Path(__file__).resolve().parent
+
 # Get only the rows with a resolution date
-with open('csv_files/issues.csv', mode='r', encoding='utf-8', newline='') as infile, \
-     open('csv_files/1-issues_resolution.csv', mode='w', encoding='utf-8', newline='') as outfile:
+with open(BASE_DIR / 'csvIntermediate' / 'issues.csv', mode='r', encoding='utf-8', newline='') as infile, \
+     open(BASE_DIR / 'csvIntermediate' / '1-issues_resolution.csv', mode='w', encoding='utf-8', newline='') as outfile:
     
     reader = csv.reader((line.replace('\x00', '') for line in infile))
     writer = csv.writer(outfile)
@@ -24,8 +28,8 @@ with open('csv_files/issues.csv', mode='r', encoding='utf-8', newline='') as inf
 
 
 # Get only the rows with English language summary
-with open('csv_files/1-issues_resolution.csv', mode='r', encoding='utf-8', newline='') as infile, \
-     open('csv_files/2-issues_resolution_en.csv', mode='w', encoding='utf-8', newline='') as outfile:
+with open(BASE_DIR / 'csvIntermediate' / '1-issues_resolution.csv', mode='r', encoding='utf-8', newline='') as infile, \
+     open(BASE_DIR / 'csvIntermediate' / '2-issues_resolution_en.csv', mode='w', encoding='utf-8', newline='') as outfile:
     
     reader = csv.reader(infile)
     writer = csv.writer(outfile)
@@ -44,8 +48,8 @@ with open('csv_files/1-issues_resolution.csv', mode='r', encoding='utf-8', newli
 
 
 # Get only the rows with a summary and description and a resolution date in the recent past
-with open('csv_files/2-issues_resolution_en.csv', mode='r', encoding='utf-8', newline='') as infile, \
-     open('csv_files/3-issues_recent.csv', mode='w', encoding='utf-8', newline='') as outfile:
+with open(BASE_DIR / 'csvIntermediate' / '2-issues_resolution_en.csv', mode='r', encoding='utf-8', newline='') as infile, \
+     open(BASE_DIR / 'csvIntermediate' / '3-issues_recent.csv', mode='w', encoding='utf-8', newline='') as outfile:
     
     reader = csv.reader((line.replace('\x00', '') for line in infile))
     writer = csv.writer(outfile)

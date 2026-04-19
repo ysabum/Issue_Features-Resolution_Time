@@ -1,15 +1,21 @@
+'''
+Script to get the issue comment length of sample csv.
+'''
+
 #!/usr/bin/env python
 import os
 import csv
 import sys
 from datetime import datetime
+from pathlib import Path
 
 csv.field_size_limit(sys.maxsize)
 
+BASE_DIR = Path(__file__).resolve().parent
 MAX_CHARS = 6000
 
-with open('csv_files/5-issues_sample.csv', mode='r', encoding='utf-8', newline='') as infile, \
-     open('csv_files/6-issues_analyzed.csv', mode='w', encoding='utf-8', newline='') as outfile:
+with open(BASE_DIR / 'csvIntermediate' / '5-issues_sample.csv', mode='r', encoding='utf-8', newline='') as infile, \
+     open(BASE_DIR / 'csvIntermediate' / '6-issues_analyzed.csv', mode='w', encoding='utf-8', newline='') as outfile:
 
     reader = csv.reader(infile)
     writer = csv.writer(outfile)

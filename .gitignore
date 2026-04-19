@@ -1,6 +1,6 @@
-dataset/Jira/csv_files
-dataset/Jira/api_key
-dataset/Jira/.venv
-dataset/Jira/programming_task_example
+dataset/csvIntermediate
+dataset/unused
+webworkspace/
+dataset/apiKey
+.venv/
 .vscode/
-Jira/.vscode

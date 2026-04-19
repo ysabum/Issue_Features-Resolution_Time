@@ -1,0 +1,1 @@
+ResolutionTime = 39.88 - 24.85 * log(percent_relevance)
