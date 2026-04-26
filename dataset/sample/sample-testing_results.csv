@@ -1,0 +1,13 @@
+title length,comment length,suggestions,predicted resolution time (days),actual resolution time (days)
+63,342,"Your comment may not be relevant to the issue title; Your tone may be perceived as unprofessional. Consider revising these words: decreased, coverage, cherry-pick",35.97,92
+43,268,"N/A",53.06,28
+63,303,"Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",13.26,102
+69,214,"Your comment may not be relevant to the issue title; Your tone may be perceived as unprofessional. Consider revising these words: issue, analysis, code, comparison",39.57,73
+63,303,"Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",11.57,70
+54,260,"N/A",53.71,23
+69,327,"Your tone may be perceived as unprofessional. Consider revising these words: awesome, thanks; Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",8.40,110
+69,327,"Your tone may be perceived as unprofessional. Consider revising these words: good, awesome, thanks; Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",10.90,65
+69,409,"Your tone may be perceived as unprofessional. Consider revising these words: LGTM, nice",41.72,15
+57,316,"Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",12.45,99
+52,1033,"Your tone may be perceived as unprofessional. Consider revising these words: clarification, explanation, technical",30.05,65
+63,247,"Your tone may be perceived as unprofessional. Consider revising these words: LGTM, thanks; Your comment may not be relevant to the issue title. Consider improving clarity or alignment.",9.82,45

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Issue Calculator</h2>
+</br>
+
+<!-- RECOMMENDATIONS (ABOVE FORM) -->
+<div id="recommendations">
+
+    {% if rec_comment_length %}
+    <div class="alert alert-warning alert-dismissible fade show" 
+         role="alert" id="rec_comment_length_box" style="display:none;">
+        {{ rec_comment_length }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %}
+
+    {% if rec_relevance %}
+    <div class="alert alert-warning alert-dismissible fade show" 
+         role="alert" id="rec_relevance_box" style="display:none;">
+        {{ rec_relevance }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %}
+
+    {% if rec_tone %}
+    <div class="alert alert-warning alert-dismissible fade show" 
+         role="alert" id="rec_tone_box" style="display:none;">
+        {{ rec_tone }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %}
+
+    {% if rec_toxicity %}
+    <div class="alert alert-danger alert-dismissible fade show" 
+         role="alert" id="rec_toxicity_box" style="display:none;">
+        {{ rec_toxicity }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %}
+
+</div>
+
+
+<!-- FORM -->
+<form method="post">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Issue Title</label>
+        <input type="text" class="form-control" name="title" required value="{{ title }}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Issue Comment</label>
+        <textarea class="form-control" name="comment" rows="5" required>{{ comment }}</textarea>
+    </div>
+
+    <button class="btn btn-glow">Submit</button>
+
+    {% if final_prediction != "na" %}
+    <div class="alert alert-info mt-4">
+        <strong>Predicted Resolution Time:</strong> {{ final_prediction|floatformat:2 }} days
+    </div>
+    {% endif %}
+</form>
+
+
+<!-- JAVASCRIPT TO REVEAL ALERTS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ids = [
+        "rec_comment_length_box",
+        "rec_relevance_box",
+        "rec_tone_box",
+        "rec_toxicity_box"
+    ];
+
+    ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.style.display = "block";
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,147 @@
+1. 
+Title: [WW-5132] [WW-5123] labelposition - cherry-pick
+
+Comment: Cherry pick of https://github.com/apache/struts/pull/490 plus some additional small changes
+Refs [WW-5123](https://issues.apache.org/jira/browse/WW-5123)\r\r\nRefs [WW-5132](https://issues.apache.org/jira/browse/WW-5132).
+[![Coverage Status](https://coveralls.io/builds/40910323/badge)](https://coveralls.io/builds/40910323)
+Coverage decreased (-0.002%) to 49.914% when pulling **9e1d4829e57f71a4d85ff12aea9b18638d30d942 on WW-5123-labelposition** into **1567f7699dafc06cc3062b8e9f6f3f7447222c20 on master**.
+
+Resolution Time: 35.97 days
+
+Suggestions: Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+Your tone may be perceived as unprofessional. Consider revising these words: decreased, coverage, cherry-pick
+
+
+
+2. 
+Title: [WW-5132] [WW-5123] labelposition
+
+Comment: Fixes [WW-5123](https://issues.apache.org/jira/browse/WW-5123)\r\r\nFixes [WW-5132](https://issues.apache.org/jira/browse/WW-5132)
+['\\n[![Coverage Status](https://coveralls.io/builds/40691481/badge)](https://coveralls.io/builds/40691481)\\n\\nCoverage decreased (-0.001%) to 47.311% when pulling **f1824b539389e92c4302e93d9af6fb9f7b0fdfcc on WW-5132-labelposition** into **620b8c3a0ce4b880c4cb2a0c857d2cea1eabe92f on struts-2-5-x**.\\n']
+
+Resolution Time: 53.06 days
+
+Suggestions: N/A
+
+
+
+3. 
+Title: [WW-5125] use .get(...) instead of [...] for fieldErrors
+
+Comment: All [ occurrences in all ftl files reviewed. Only fieldErrors had used [...] which replaced by .get(...) to fix WW-5125 as well as aligning with other ftl files conduct.
+['\\n[![Coverage Status](https://coveralls.io/builds/39290805/badge)](https://coveralls.io/builds/39290805)\\n\\nCoverage remained the same at 49.91% when pulling **04bc4bd97c41bd181dd45580ce12236218177aca on yasserzamani:ww_5125** into **09f969a9bebe31370df64702a61420f14ead6271 on apache:master**.\\n', 'LGTM \ud83d\udc4d ']
+
+Resolution Time: 13.26 days
+
+Suggestions: Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+
+
+
+4.
+Title: [WW-5126] use == instead of .equals in ModelDrivenInterceptor
+
+Comment: due to refreshing model regardless of potential overridden Object.equals
+['\\n[![Coverage Status](https://coveralls.io/builds/39290710/badge)](https://coveralls.io/builds/39290710)\\n\\nCoverage increased (+0.003%) to 49.914% when pulling **fe656eae21a7a287b2143fad638234314f858178 on yasserzamani:ww_5126** into **09f969a9bebe31370df64702a61420f14ead6271 on apache:master**.\\n']
+
+Resolution Time: 39.57 days
+
+Suggestions: Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+Your tone may be perceived as unprofessional. Consider revising these words: issue, analysis, code, comparison
+
+
+
+5.
+Title: [WW-5125] use .get(...) instead of [...] for fieldErrors
+
+Comment: All [ occurrences in all ftl files reviewed. Only fieldErrors had used [...] which replaced by .get(...) to fix WW-5125 as well as aligning with other ftl files conduct.
+['\\n[![Coverage Status](https://coveralls.io/builds/39105809/badge)](https://coveralls.io/builds/39105809)\\n\\nCoverage remained the same at 47.312% when pulling **20e4529e355d427c26916174259470fb91e3029f on ww_5125_2_5** into **8a26c0d753c3a94d9e5e774c5109f59a5e3d79d6 on struts-2-5-x**.\\n', 'LGTM \ud83d\udc4d ']", "issue_text": "[WW-5125] use .get(...) instead of [...] for fieldErrors\nAll [ occurrences in all ftl files reviewed. Only fieldErrors had used [...] which replaced by .get(...) to fix WW-5125 as well as aligning with other ftl files conduct.
+
+Resolution Time: 11.57 days
+
+Suggestions: Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+
+
+
+6.
+Title: [WW-5117] Keeps Action always on top of the ValueStack
+
+Comment: Cherry-picked PR #475 \r\r\nRefs [WW-5117](https://issues.apache.org/jira/browse/WW-5117)
+['\\n[![Coverage Status](https://coveralls.io/builds/38273883/badge)](https://coveralls.io/builds/38273883)\\n\\nCoverage increased (+0.009%) to 49.91% when pulling **ed3323c36279da59ef1d95e795511ffeda4c5360 on WW-5117-reorders-stack** into **49a4d6d5a11227314a5412935b31989fad3bffc9 on master**.\\n', \"Thanks! LGTM:+1:\\r\\n\\r\\nP.S. looks like apache hasn't had enough resource to build and is timed out. Not sure if we should do anything\"]
+
+Resolution Time: 53.71 days
+
+Suggestions: N/A
+
+
+7.
+Title: [WW-5121] Fix: remove contention during Scope.SINGLETON injection
+
+Comment: Fixes the contention issue described in WW-5121 by applying a double-null-check-with-volatile pattern to avoid the synchronized cost on each and every injection of the singleton.\r\r\n\r\r\nSame patch as #478 but against the Struts 2.5.x branch.
+['\\n[![Coverage Status](https://coveralls.io/builds/38164614/badge)](https://coveralls.io/builds/38164614)\\n\\nCoverage increased (+0.0009%) to 47.306% when pulling **ce8b75de58cca46dade40d76d5d421be5ff808ba on davoustp:contention-in-singleton-injection-2.5.x** into **39d70e394417a2a41c5fccccfcd1b2a9f15ad19a on apache:struts-2-5-x**.\\n', 'Awesome :clap: thanks a lot!']
+
+Resolution Time: 8.40 days
+
+Suggestions: Your tone may be perceived as unprofessional. Consider revising these words: ['awesome', 'thanks']
+Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+
+
+
+8.
+Title: [WW-5121] Fix: remove contention during Scope.SINGLETON injection
+
+Comment: Fixes the contention issue described in WW-5121 by applying a double-null-check-with-volatile pattern to avoid the `synchronized` cost on each and every injection of the singleton.\r\r\n\r\r\nThis pull request applies to branch master (Struts 2.6.x).
+['Also available for Struts 2.5.x with #479', '\\n[![Coverage Status](https://coveralls.io/builds/38164476/badge)](https://coveralls.io/builds/38164476)\\n\\nCoverage increased (+0.002%) to 49.901% when pulling **cb2c67e8085107e7c21dfdf20187e36d1bd5d864 on davoustp:contention-in-singleton-injection-2.6.x** into **fde8721820b203e992b273fbba75959f2d4c3ac1 on apache:master**.\\n', 'Looks good to me \ud83d\udcaf ', 'Awesome :100: thanks!']
+
+Resolution Time: 10.90 days
+
+Suggestions: Your tone may be perceived as unprofessional. Consider revising these words: ['good', 'awesome', 'thanks']
+Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+
+
+
+9.
+Title: [WW-5119] Fix: remove contention during localized text lookup (JDK 1.7+)
+
+Comment: Backport of pull request #476 for Struts 2.5.x (JDK 1.7 still supported in this branch).\r\r\n\r\r\nThe `ConcurrentHashMap.newKeySet()` usage (available only in JDK 1.8+) is replaced by a `ConcurrentHashMap<String,Boolean>` to guarantee JDK 1.7 compatibility.\r\r\n\r\r\nFixes [WW-5119](https://issues.apache.org/jira/browse/WW-5119)
+['\\n[![Coverage Status](https://coveralls.io/builds/37940077/badge)](https://coveralls.io/builds/37940077)\\n\\nCoverage remained the same at 47.305% when pulling **69669d6cf76d25daa529324bd5bd0db81c8b4cd3 on davoustp:contention-in-localized-resources-2.5.x** into **39d70e394417a2a41c5fccccfcd1b2a9f15ad19a on apache:struts-2-5-x**.\\n', 'nice \ud83d\udc4f \\r\\nLGTM \ud83d\udc4d ']
+
+Resolution Time: 41.72 days
+
+Suggestions: Your tone may be perceived as unprofessional. Consider revising these words: ['LGTM', 'nice']
+
+
+
+10.
+Title: [WW-5117] Reorders stack
+
+Comment: This PR reorders objects on `ValueStack` and puts action always on top just before tag. In such case any `%{..}` will be evaluated against action first and then against the tag itself.\r\r\n\r\r\nFixes [WW-5117](https://issues.apache.org/jira/browse/WW-5117)
+['\\n[![Coverage Status](https://coveralls.io/builds/38198531/badge)](https://coveralls.io/builds/38198531)\\n\\nCoverage increased (+0.007%) to 47.312% when pulling **af6d3868b88a886e750b209a23b916966431998a on WW-5117-reorders-stack** into **39d70e394417a2a41c5fccccfcd1b2a9f15ad19a on struts-2-5-x**.\\n', 'Please squash this PR if so']
+
+Resolution Time: 12.45 days
+
+Suggestions: Your comment may not be relevant to the issue title. Consider improving clarity or alignment.
+
+
+
+11.
+Title: WW-2411 Add a maxlength attribute to the textarea tag 
+
+Comment: Maxlength attribute added to textarea tag
+['\\n[![Coverage Status](https://coveralls.io/builds/37478080/badge)](https://coveralls.io/builds/37478080)\\n\\nCoverage increased (+0.002%) to 49.899% when pulling **255b563dcf34d73ad6d94f71bf1331147714441a on kerttup:Branch_1** into **eb8bc5e910f1da575e2bc8df752c97912a41378f on apache:master**.\\n', 'You must also modify [`template/simple/textarea.ftl`](https://github.com/apache/struts/blob/master/core/src/main/resources/template/simple/textarea.ftl#L21-L47), add something like this:\\r\\n```\\r\\n<#if parameters. maxlength?has_content>\\r\\n maxlength =\"${parameters. maxlength}\"<#rt/>\\r\\n</#if>\\r\\n```', 'Also would you mind adding `minlength`?\\r\\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attributes', 'Modified textarea.ftl and added also minlength attribute.', '@kerttup do you plan port these changes into 2.5.x branch?', 'Hi @lukaszlenart, what do you mean with plan port? This was my first pull request so I am new to this and dont know the practices yet.', 'We are currently developing two versions of Struts\\r\\n- `master` branch represents incoming [Struts 2.6](https://issues.apache.org/jira/projects/WW/versions/12340222)\\r\\n- `struts-2-5-x` branch is used to maintain current [Struts 2.5.x](https://issues.apache.org/jira/projects/WW/versions/12349611)\\r\\n\\r\\nYou addressed your fix just against the `master` branch which means it will be included in Struts 2.6 - this is fine if you can wait on that version to be released probably in a few months. If you would like to see your fix early, you must _port_ it to `struts-2-5-x` branch by cherry-picking the changes and opening a new PR against `struts-2-5-x` branch.\\r\\n', 'Thanks for the clarification. I think this can wait until the next version.']", "issue_text": "WW-2411 Add a maxlength attribute to the textarea tag \nMaxlength attribute added to textarea tag", "commit_id": "04b04dfd8fd37947a1d1828cdb647f03942ac1f4
+
+Resolution Time: 30.05 days
+
+Suggestions: Your tone may be perceived as unprofessional. Consider revising these words: clarification, explanation, technical
+
+
+
+12.
+Title: [WW-5113] [WW-5114] Drops deprecated config options
+
+Comment: Drops deprecated `struts.xworkTextProvider` and `struts.localeProvider` config options.\r\r\n\r\r\nRefs [WW-5113](https://issues.apache.org/jira/browse/WW-5113)\r\r\nRefs [WW-5114](https://issues.apache.org/jira/browse/WW-5114)
+['\\n[![Coverage Status](https://coveralls.io/builds/36546261/badge)](https://coveralls.io/builds/36546261)\\n\\nCoverage increased (+0.006%) to 49.898% when pulling **a88c4c801a4159779aea3be96f16e66f8f7dad2a on WW-5113-5114-drop** into **29d7a13c702a43531889e208fd9410af64c0ff6a on master**.\\n', 'LGTM thanks! :+1: ']
+
+Resolution Time: 9.82 days
+
+Suggestions: Your tone may be perceived as unprofessional. Consider revising these words: ['LGTM', 'thanks']
+Your comment may not be relevant to the issue title. Consider improving clarity or alignment.

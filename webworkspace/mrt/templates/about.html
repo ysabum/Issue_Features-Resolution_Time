@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>About the Application</h2>
+<p class="mt-3">
+    Measure Resolution Time analyzes the content 
+    of an issue report and estimates how long it may 
+    take to be resolved based on linguistic characteristics 
+    such as relevance, tone, toxicity, and comment length. 
+    The system uses statistical models derived from public real issue‑tracking 
+    datasets to generate an estimated resolution time and 
+    highlight parts of the text that may affect responsiveness.
+</br>
+</br>
+    To use the tool, enter an issue title and an 
+    initial issue comment into the form on the Calculator page. 
+    After submitting, the system will display an estimated 
+    resolution time along with recommendations for improving 
+    clarity, tone, and relevance. These suggestions are 
+    intended to help you revise your issue before posting it to 
+    platforms like GitHub. You can adjust your text and 
+    resubmit as many times as you like to see how different 
+    writing choices influence the prediction.
+</br>
+</br>
+    This application does not store or share any issue titles 
+    or comments you submit. All text is processed temporarily 
+    for the purpose of generating predictions and recommendations, 
+    and no user‑provided content is saved, logged, or used for any
+     secondary purpose. Your inputs remain private and are discarded 
+     once the prediction is complete.
+</p>
+{% endblock %}
